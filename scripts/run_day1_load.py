@@ -3,16 +3,15 @@ import sys
 import json
 from datetime import datetime, timezone
 import logging
-from bootcamp_data.config import make_paths
-from bootcamp_data.io import read_orders_csv, read_users_csv, write_parquet
-from bootcamp_data.transforms import enforce_schema
-
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
+from bootcamp_data.config import make_paths
+from bootcamp_data.io import read_orders_csv, read_users_csv, write_parquet
+from bootcamp_data.transforms import enforce_schema
 
 
 log = logging.getLogger(__name__)
