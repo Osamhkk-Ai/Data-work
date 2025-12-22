@@ -1,0 +1,16 @@
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Processed data (generated)
+data/processed/
+
+# Raw cache
+data/raw/cache/
+
+# OS
+.DS_Store
+Thumbs.db
