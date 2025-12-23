@@ -10,7 +10,8 @@ def enforce_schema(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def missingness_report(df):
-    return (df.isna().sum().rename("n_missing").to_frame().assign(missing = lambda t: t["n_missing"] / len(df)).sort_values("missing", ascending = False))
+    return
+    (df.isna().sum().rename("n_missing").to_frame().assign(missing = lambda t: t["n_missing"] / len(df)).sort_values("missing", ascending = False))
 
 
 def add_missing_flags(df, cols):
@@ -37,3 +38,30 @@ def dedupe_keep_latest(df: pd.DataFrame, key_cols: list[str], timeStep_col: str)
           .drop_duplicates(subset=key_cols, keep="last")
           .reset_index(drop=True)
     )
+
+
+def parse_datetime(df,col,*, utc: bool = True):
+    dt=pd.to_datetime(df[col], errors="coerce",utc=utc)
+    return df.assign(**{col:dt})
+
+
+def add_time_part(df,ts_col):
+    return df.assign(
+        year = df[ts_col].dt.year,
+        month = df[ts_col].dt.month,
+        day = df[ts_col].dt.day,
+        hour = df[ts_col].dt.hour
+    )
+
+def iqr_bounds(s,k=1.5):
+    new = s.dropna()
+    q1 = new.qiantile(0.25)
+    q3 = new.qiantile(0.75)
+    iqr = q3 -q1
+    return float(q1 - k*iqr), float(q3 + k*iqr)
+
+
+def winsorize(s: pd.Series, lo: float = 0.01, hi: float = 0.99) -> pd.Series:
+    x = s.dropna()
+    a, b = x.quantile(lo), x.quantile(hi)
+    return s.clip(lower=a, upper=b)
