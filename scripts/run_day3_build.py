@@ -45,6 +45,18 @@ def main() -> None:
 
     assert len(joined) == len(orders_t), "Row count changed (join explosion?)"
 
+    summary = (
+        joined.groupby("country", dropna=False)
+              .agg(
+                  n=("order_id", "size"),
+                  revenue=("amount", "sum"),
+              )
+              .reset_index()
+              .sort_values("revenue", ascending=False)
+    )
+
+    print(summary)
+
     match_rate = 1.0 - float(joined["country"].isna().mean())
     print("rows:", len(joined))
     print("country match rate:", round(match_rate, 3))
