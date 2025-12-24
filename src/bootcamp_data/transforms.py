@@ -45,7 +45,7 @@ def parse_datetime(df,col,*, utc: bool = True):
     return df.assign(**{col:dt})
 
 
-def add_time_part(df,ts_col):
+def add_time_parts(df,ts_col):
     return df.assign(
         year = df[ts_col].dt.year,
         month = df[ts_col].dt.month,

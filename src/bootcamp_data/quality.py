@@ -16,7 +16,7 @@ def assert_non_empty(df, name="df"):
 def assert_unique_key(df,key,allow_na = False):
     if not allow_na:
         assert df[key].notna().all(),f"The column {key} has NAN values"
-    duplcate = df[key].duplcated(keep = False) & df[key].notna()
+    duplcate = df[key].duplicated(keep = False) & df[key].notna()
     assert not duplcate.all(), f"The {key} column is not unique and {duplcate.sum()} duplicate rows"
 
 
