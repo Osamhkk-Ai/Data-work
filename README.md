@@ -7,6 +7,7 @@ and exploring results using an EDA notebook.
 ---
 
 ## Project Structure
+```text
 Data-work/
 ├─ data/
 │  ├─ raw/
