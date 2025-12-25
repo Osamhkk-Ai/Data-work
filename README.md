@@ -120,7 +120,6 @@ reports/figures/
 Use the section below to add or reference exported figures:
 
 markdown
-https://github.com/Osamhkk-Ai/Data-work/blob/main/reports/figures/OrderDistribution.png
 ![Order Distribution](reports/figures/OrderDistribution.png)
 ![Refund Rate](reports\figures\refund_rate.png)
 ![Revenue by Country](reports/figures/RevenueByCountry.png)
