@@ -120,10 +120,10 @@ reports/figures/
 Use the section below to add or reference exported figures:
 
 ```markdown
-![OrderDistribution.png](attachment:OrderDistribution.png)
-![refund_rate.png](attachment:refund_rate.png)
-![RevenueByCountry.png](attachment:RevenueByCountry.png)
-![TrendOrderDaily.png](attachment:TrendOrderDaily.png)
+![Order Distribution](reports/figures/OrderDistribution.png)
+![Refund Rate](reports/figures/refund_rate.png)
+![Revenue by Country](reports/figures/RevenueByCountry.png)
+![Daily Order Trend](reports/figures/TrendOrderDaily.png)
 
 ```
 
