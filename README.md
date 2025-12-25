@@ -53,6 +53,12 @@ Install required packages:
 uv pip install -r requirements.txt
 ```
 
+## You Must Run This
+```bash
+# If you have a src/ folder:
+#   Mac/Linux: export PYTHONPATH=src
+#   Windows:   $env:PYTHONPATH="src"
+```
 
 
 ## Run ETL
