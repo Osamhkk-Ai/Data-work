@@ -125,7 +125,7 @@ markdown
 ![Revenue by Country](reports/figures/RevenueByCountry.png)
 ![Daily Order Trend](reports/figures/TrendOrderDaily.png)
 
-
+```
 
 ---
 
