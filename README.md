@@ -126,7 +126,7 @@ Use the section below to add or reference exported figures:
 ![Daily Order Trend](reports/figures/TrendOrderDaily.png)
 
 ```
-
+reports\figures\refund_rate.png
 ---
 
 ## Project Notes
